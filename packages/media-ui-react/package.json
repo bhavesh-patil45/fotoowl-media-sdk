@@ -1,0 +1,19 @@
+{
+  "name": "media-ui-react",
+  "version": "0.1.0",
+  "description": "Pure headless UI components (Grid, Lightbox, Reel Swiper). Zero styles, zero knowledge of media-core or Pexels — takes data and callbacks purely as props.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "typescript": "^5.5.4"
+  }
+}

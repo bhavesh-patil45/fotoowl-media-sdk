@@ -1,0 +1,20 @@
+{
+  "name": "media-ui-native",
+  "version": "0.1.0",
+  "description": "Pure headless UI components for React Native (Grid, Lightbox, Reel Swiper).",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "typescript": "^5.5.4"
+  }
+}
