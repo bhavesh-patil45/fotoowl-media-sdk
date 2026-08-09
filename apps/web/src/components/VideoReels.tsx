@@ -45,7 +45,7 @@ export function VideoReels({ videos, onClose }: VideoReelsProps) {
           const itemProps = getItemProps(video, index);
           const file = bestFile(video);
           return (
-            <div key={itemProps.key} style={itemProps.style} ref={itemProps.ref} className="reel-item">
+            <div key={itemProps.key} ref={itemProps.ref} className="reel-item">
               {file && (
                 <video
                   ref={(el) => {

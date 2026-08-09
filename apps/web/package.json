@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "media-core": "*",
     "media-react": "*",
     "media-ui-react": "*",
     "react": "^18.3.1",

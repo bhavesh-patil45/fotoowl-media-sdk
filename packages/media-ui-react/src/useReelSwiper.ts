@@ -13,13 +13,11 @@ export interface UseReelSwiperResult<T extends Identifiable> {
   activeItem: T | null;
   /** spread onto the scroll container (needs a fixed height in consumer CSS; this hook only sets scroll behavior) */
   getContainerProps: () => {
-    style: { overflowY: "scroll"; scrollSnapType: "y mandatory" };
     ref: (node: Element | null) => void;
   };
   /** spread onto each reel item's wrapper; registers it for active-item observation */
   getItemProps: (item: T, index: number) => {
     key: string;
-    style: { scrollSnapAlign: "start" };
     ref: (node: Element | null) => void;
   };
   /** imperative escape hatch, e.g. for a "next reel" button */
@@ -68,7 +66,6 @@ export function useReelSwiper<T extends Identifiable>(options: UseReelSwiperOpti
 
   const getContainerProps = useCallback(
     () => ({
-      style: { overflowY: "scroll" as const, scrollSnapType: "y mandatory" as const },
       ref: (node: Element | null) => {
         containerNodeRef.current = node;
         registerObserver();
@@ -80,7 +77,6 @@ export function useReelSwiper<T extends Identifiable>(options: UseReelSwiperOpti
   const getItemProps = useCallback(
     (item: T, index: number) => ({
       key: item.id,
-      style: { scrollSnapAlign: "start" as const },
       ref: (node: Element | null) => {
         if (node) {
           (node as HTMLElement).dataset.reelIndex = String(index);
