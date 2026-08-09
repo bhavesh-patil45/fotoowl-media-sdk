@@ -12,6 +12,7 @@
     "typecheck": "npm run typecheck --workspaces --if-present"
   },
   "devDependencies": {
+    "typedoc": "^0.28.20",
     "typescript": "^5.5.4"
   }
 }
