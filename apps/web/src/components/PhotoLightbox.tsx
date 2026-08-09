@@ -45,14 +45,31 @@ export function PhotoLightbox({ photos, openIndex, onClose }: PhotoLightboxProps
           src={item.urls.large}
           alt={item.alt || `Photo by ${item.author.name}`}
           className="lightbox-image"
-          onLoad={() => client.trackDownload(item, "lightbox")}
         />
 
         <figcaption className="lightbox-caption">
           Photo by {item.author.name} ·{" "}
           <a href={item.sourceUrl} target="_blank" rel="noreferrer">
             View on Pexels
-          </a>
+          </a>{" "}
+          ·{" "}
+          <button
+            className="download-btn"
+            onClick={async (e) => {
+              e.stopPropagation();
+              client.trackDownload(item, "lightbox");
+              const res = await fetch(item.urls.original);
+              const blob = await res.blob();
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement("a");
+              a.href = url;
+              a.download = `fotoowl-${item.id}.jpg`;
+              a.click();
+              URL.revokeObjectURL(url);
+            }}
+          >
+            Download
+          </button>
         </figcaption>
 
         {lightbox.hasNext && (

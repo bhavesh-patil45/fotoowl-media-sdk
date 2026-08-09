@@ -58,10 +58,28 @@ export function VideoReels({ videos, onClose }: VideoReelsProps) {
                   muted
                   playsInline
                   className="reel-item__video"
-                  onPlay={() => client.trackDownload(video, "reel")}
                 />
               )}
-              <div className="reel-item__caption">by {video.author.name}</div>
+              <div className="reel-item__caption">
+                by {video.author.name} ·{" "}
+                <button
+                  className="download-btn"
+                  onClick={async (e) => {
+                    e.stopPropagation();
+                    client.trackDownload(video, "reel");
+                    const res = await fetch(file.url);
+                    const blob = await res.blob();
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = `fotoowl-${video.id}.mp4`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                  }}
+                >
+                  Download
+                </button>
+              </div>
             </div>
           );
         })}
