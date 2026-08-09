@@ -56,8 +56,7 @@ headless components → skills → judgment), and cut in this order:
 ## AI-assisted vs hand-written
 
 Per the brief's request to disclose this: this entire submission (all
-packages, the app, both skill docs, this README) was built with an AI
-coding assistant (Claude) in a single sitting, working from the assignment
+packages, the app, both skill docs, this README) was built with an IDE-integrated autonomous AI agent (Google Deepmind) in a single sitting, working from the assignment
 brief directly — architecture decisions (package boundaries, hook shapes,
 the "shared shape between useMediaSearch/useMediaFeed" pattern, the
 prop-getter design for the headless components) were made by the assistant
