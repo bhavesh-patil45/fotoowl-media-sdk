@@ -27,10 +27,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>Media SDK Demo</h1>
-        <p className="app-subtitle">
-          {isSearching ? `Search results for "${query}"` : kind === "photo" ? "Curated photos" : "Popular videos"}
-        </p>
+        <h1>Explore Media</h1>
         <SearchBar query={query} onQueryChange={setQuery} kind={kind} onKindChange={setKind} />
       </header>
 

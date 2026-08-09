@@ -33,17 +33,10 @@ body {
 }
 
 .app-header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 50;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  padding: 1rem 1.5rem;
-  border-radius: 16px;
-  border: 1px solid var(--glass-border);
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0 2rem;
+  margin-bottom: 1rem;
 }
 
 .app-header h1 {
@@ -56,35 +49,26 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-.app-subtitle {
-  color: var(--text-muted);
-  margin: 0 0 1.5rem;
-  font-size: 0.95rem;
-  font-weight: 400;
-}
+
 
 .search-bar {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   align-items: center;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid var(--glass-border);
-  padding: 0.5rem;
-  border-radius: 12px;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .search-bar__input {
   flex: 1;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  border: none;
-  background: transparent;
+  padding: 0.85rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: rgba(15, 23, 42, 0.6);
   color: var(--text-main);
   font-family: var(--font-body);
   font-size: 1rem;
   outline: none;
   transition: all 0.2s ease;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .search-bar__input::placeholder {
@@ -98,9 +82,10 @@ body {
 .search-bar__toggle {
   display: flex;
   gap: 0.25rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--glass-border);
   padding: 0.25rem;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .toggle-btn {
@@ -390,5 +375,20 @@ body {
 }
 .download-btn:hover {
   text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .app-header {
+    padding: 0 0 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .app-header h1 {
+    font-size: 1.75rem;
+  }
 }
 

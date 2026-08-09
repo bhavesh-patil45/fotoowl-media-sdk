@@ -10,7 +10,7 @@ export function SearchBar({ query, onQueryChange, kind, onKindChange }: SearchBa
     <div className="search-bar">
       <input
         type="search"
-        placeholder="Search Pexels…"
+        placeholder="Search photos and videos..."
         value={query}
         onChange={(e) => onQueryChange(e.target.value)}
         className="search-bar__input"
